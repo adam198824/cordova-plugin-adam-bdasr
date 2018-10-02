@@ -135,13 +135,13 @@ public class bdasr extends CordovaPlugin implements EventListener {
             Map<String, Object> params = new LinkedHashMap<String, Object>();
             String event = SpeechConstant.ASR_START; // 替换成测试的event
             
-            params.put(SpeechConstant.ACCEPT_AUDIO_VOLUME, false);
-            // params.put(SpeechConstant.NLU, "enable");
-            // params.put(SpeechConstant.VAD_ENDPOINT_TIMEOUT, 0); // 长语音
+            params.put(SpeechConstant.ACCEPT_AUDIO_VOLUME, true);
+            params.put(SpeechConstant.NLU, "enable");
+            params.put(SpeechConstant.VAD_ENDPOINT_TIMEOUT, 0); // 长语音
             // params.put(SpeechConstant.IN_FILE, "res:///com/baidu/android/voicedemo/16k_test.pcm");
             // params.put(SpeechConstant.VAD, SpeechConstant.VAD_DNN);
             // params.put(SpeechConstant.PROP ,20000);
-            // params.put(SpeechConstant.PID, 1537); // 中文输入法模型，有逗号
+            params.put(SpeechConstant.PID, 15361); // 中文输入法模型，有逗号
             // 请先使用如‘在线识别’界面测试和生成识别参数。 params同ActivityRecog类中myRecognizer.start(params);
             String json = new JSONObject(params).toString(); // 这里可以替换成你需要测试的json
             asr.send(event, json, null, 0, 0);
@@ -198,8 +198,16 @@ public class bdasr extends CordovaPlugin implements EventListener {
         }
         
         if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL)) {
-            // 识别结果
+            
+            if (params.contains("\"nlu_result\"")) {
+            // 在线语义识别
+            sendEvent("nluResult", new String(data, offset, length));
+                
+            }else{
+            // 语音识别结果
             sendEvent("asrText", params);
+
+            }
         }
         
         if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_CANCEL)) {
