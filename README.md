@@ -9,12 +9,12 @@
 
 ### 安装
 1. 在线npm安装
- `cordova plugin add cordova-plugin-bdasr --variable APIKEY=[your apikey] --variable SECRETKEY=[your secretkey] --variable APPID=[your appid]`
+ `cordova plugin add cordova-plugin-bdasr --variable APIKEY=[your apikey] --variable SECRETKEY=[your secretkey] --variable APPID=[your appid] --variable MICRO_PHONE_USAGE_DESCRIPTION=授权【您的应用名】使用麦克风`
 2. 在线url安装
-  `cordova plugin add https://github.com/hhjjj1010/cordova-plugin-bdasr.git --variable APIKEY=[your apikey] --variable SECRETKEY=[your secretkey] --variable APPID=[your appid]`
+  `cordova plugin add https://github.com/hhjjj1010/cordova-plugin-bdasr.git --variable APIKEY=[your apikey] --variable SECRETKEY=[your secretkey] --variable APPID=[your appid] --variable MICRO_PHONE_USAGE_DESCRIPTION=授权【您的应用名】使用麦克风`
 
 3. 本地安装
-`cordova plugin add /your localpath --variable APIKEY=[your apikey] --variable SECRETKEY=[your secretkey] --variable APPID=[your appid]  `
+`cordova plugin add /your localpath --variable APIKEY=[your apikey] --variable SECRETKEY=[your secretkey] --variable APPID=[your appid]  --variable MICRO_PHONE_USAGE_DESCRIPTION=授权【您的应用名】使用麦克风`
 
 
 ### API使用
