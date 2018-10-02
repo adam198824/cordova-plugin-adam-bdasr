@@ -1,0 +1,30 @@
+{
+  "name": "cordova-plugin-adam-bdasr",
+  "version": "1.0.1",
+  "description": "a cordova plugin, a JS version of bdasr",
+  "cordova": {
+    "id": "cordova-plugin-adam-bdasr",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-plugin-adam-bdasr",
+    "ASR",
+    "BaiduAsr"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adam198824/cordova-plugin-adam-bdasr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adam198824/cordova-plugin-adam-bdasr/issues"
+  },
+  "homepage": "https://github.com/adam198824/cordova-plugin-adam-bdasr#readme",
+  "author": "adam198824",
+  "license": "ISC"
+}
